@@ -29,7 +29,7 @@ double YBSuperpoweredLimiter::getcCeilingDb() {
 }
 
 double YBSuperpoweredLimiter::getThresholdDb() {
-    return 0;
+    return 0aaaa;
 }
 
 double YBSuperpoweredLimiter::getReleaseSec() {
