@@ -25,7 +25,7 @@ bool YBSuperpoweredLimiter::getEnabled() {
 }
 
 double YBSuperpoweredLimiter::getcCeilingDb() {
-    return mSuperpoweredLimiter;
+    return mSuperpoweredLimiter->ceilingDb;
 }
 
 double YBSuperpoweredLimiter::getThresholdDb() {
