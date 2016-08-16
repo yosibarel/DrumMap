@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context="com.yossibarel.drummap.EditChannelActivity">
+
+
+    <FrameLayout
+        android:id="@+id/fragmentContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout"
+        >
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/btnFileSynth"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_gravity="left|top"
+            android:layout_weight="1"
+            android:text="Synth"
+            android:textSize="10dp"/>
+
+        <Button
+            android:id="@+id/btnSeq"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:text="Seq"
+            android:textSize="10dp"/>
+
+        <Button
+            android:id="@+id/btnOscSynth"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+
+            android:layout_weight="1"
+            android:text="LFO"
+            android:textSize="10dp"/>
+
+        <Button
+            android:id="@+id/btnFxSynth"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:text="Fx"
+            android:textSize="10dp"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

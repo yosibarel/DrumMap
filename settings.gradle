@@ -1,0 +1,4 @@
+include ':app'
+rootProject.children.each { project ->
+    project.buildFileName = "debug.gradle"
+}

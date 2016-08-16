@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:piano="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/loWaveForm"
+        android:layout_alignEnd="@+id/loWaveForm"
+        android:layout_alignRight="@+id/loWaveForm"
+        android:layout_toEndOf="@+id/gridViewEdit"
+        android:layout_toRightOf="@+id/gridViewEdit">
+
+        <Button
+            android:id="@+id/btnPianoRoll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:layout_gravity="center"
+            android:text="Piano roll"
+            android:textSize="10dp"/>
+    </FrameLayout>
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_above="@+id/loTransport"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/drw_border"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/tvVol"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="0.0"
+            android:textSize="8dp"
+            />
+
+        <LinearLayout
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:background="#000">
+
+                <views.Custom.ViewMeter
+                    android:id="@+id/vmLeft"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbVol"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/draw_progress"
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"
+                    />
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+            <LinearLayout
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:background="#000">
+
+                <views.Custom.ViewMeter
+                    android:id="@+id/vmRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFxParamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="4dp"
+
+            android:text="Vol"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="8dp"/>
+    </views.Custom.LinearLayoutTouched>
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loPosition"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom"
+        >
+
+        <Button
+            android:id="@+id/btnEditWave"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textSize="8dp"/>
+
+        <views.Custom.RangeBar
+            android:id="@+id/rbPosition"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></views.Custom.RangeBar>
+    </views.Custom.LinearLayoutTouched>
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loFilterType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/loVolume"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/loVolume"
+        android:layout_toStartOf="@+id/loVolume"
+        android:background="@drawable/drw_border"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <CheckBox
+            android:id="@+id/cbFilterEnable"
+            android:layout_width="16dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right"
+            android:button="@drawable/drw_check_box"
+
+
+            android:textSize="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/gbFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:paddingLeft="4dp">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:button="@drawable/drw_check_box"
+                android:paddingLeft="4dp"
+                android:text="New RadioButton"
+                android:textSize="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:button="@drawable/drw_check_box"
+                android:paddingLeft="4dp"
+                android:text="New RadioButton"
+                android:textSize="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:button="@drawable/drw_check_box"
+                android:paddingLeft="4dp"
+                android:text="New RadioButton"
+                android:textSize="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:button="@drawable/drw_check_box"
+                android:checked="false"
+                android:paddingLeft="4dp"
+                android:text="f2"
+                android:textSize="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:button="@drawable/drw_check_box"
+                android:paddingLeft="4dp"
+                android:text="New RadioButton"
+                android:textSize="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/drw_check_box"
+                android:paddingLeft="4dp"
+                android:text="New RadioButton"
+                android:textSize="10dp"/>
+        </RadioGroup>
+    </views.Custom.LinearLayoutTouched>
+
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loFilterValue"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+
+        android:layout_alignBottom="@+id/loFilterType"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/loFilterType"
+        android:layout_toStartOf="@+id/loFilterType"
+        android:background="@drawable/drw_border"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+    </views.Custom.LinearLayoutTouched>
+
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loPiano"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:layout_above="@+id/loPosition"
+        android:layout_toLeftOf="@+id/loADSR"
+        android:layout_toStartOf="@+id/loADSR">
+
+
+        <views.Custom.pianoview.Piano
+            android:id="@+id/vPiano"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            piano:keyCount="24"/>
+    </views.Custom.LinearLayoutTouched>
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loADSR"
+        android:layout_width="wrap_content"
+        android:layout_height="104dp"
+
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/loPan"
+        android:background="@drawable/drw_border"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+
+            android:orientation="horizontal"
+            >
+
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbEnvA"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/draw_progress"
+
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"/>
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="2dp">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbEnvD"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/draw_progress"
+
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"/>
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="2dp"
+                >
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbEnvS"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="50"
+                    android:progressDrawable="@drawable/draw_progress"
+
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"/>
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbEnvR"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/draw_progress"
+
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"/>
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="A"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="D"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="S"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="R"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+        </LinearLayout>
+        <SeekBar
+            android:id="@+id/sbAdsrAmountMs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:max="100"
+            android:maxHeight="4dp"
+
+            android:maxWidth="4dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/draw_progress"
+            android:thumb="@drawable/draw_slider"/>
+    </views.Custom.LinearLayoutTouched>
+
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loBaseControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBottom="@+id/loTransport"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/drw_border"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <CheckBox
+            android:id="@+id/cbReverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cbStopPlayOnRelese"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/btnSelectFile"
+            android:layout_toRightOf="@+id/btnSelectFile"
+            android:button="@drawable/drw_check_box"
+            android:text="Reverse"
+            android:textSize="6dp"/>
+
+
+        <CheckBox
+            android:id="@+id/cbStopPlayOnRelese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/btnSelectFile"
+            android:layout_toRightOf="@+id/btnSelectFile"
+            android:button="@drawable/drw_check_box"
+            android:text="Stop on release"
+            android:textSize="6dp"/>
+
+        <CheckBox
+            android:id="@+id/cbLoop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:button="@drawable/drw_check_box"
+
+            android:text="Loop"
+            android:textSize="6dp"/>
+
+        <CheckBox
+            android:id="@+id/cbPlayFromStartLoop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/drw_check_box"
+
+            android:text="Play from start"
+            android:textSize="6dp"/>
+
+        <Button android:textSize="8dp"
+            android:layout_width="56dp"
+            android:layout_height="32dp"
+            android:text="Color"
+            android:id="@+id/btnColor"/>
+    </views.Custom.LinearLayoutTouched>
+
+
+
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/gridViewEdit"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_above="@+id/loTransport"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/loBaseControl"
+        android:layout_toRightOf="@+id/loBaseControl"
+        android:background="@drawable/drw_border"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:id="@+id/llBtn1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:duplicateParentState="true"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBtn2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:duplicateParentState="true"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBtn3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:duplicateParentState="true"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBtn4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:duplicateParentState="true"
+            android:orientation="horizontal"></LinearLayout>
+    </views.Custom.LinearLayoutTouched>
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loTransport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/loPiano"
+        android:layout_alignEnd="@+id/gridViewEdit"
+        android:layout_alignRight="@+id/gridViewEdit"
+        android:layout_toRightOf="@+id/loBaseControl"
+        android:background="@drawable/drw_border"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnSelectFile"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+
+
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:text="Open"
+            android:textSize="6dp"/>
+
+        <Button
+            android:id="@+id/btnRec"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+
+
+            android:layout_weight="1"
+            android:text="Rec"
+            android:textSize="6dp"/>
+    </views.Custom.LinearLayoutTouched>
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loPan"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/loPiano"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/loVolume"
+        android:background="@drawable/drw_border"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+
+            android:text="L"
+            android:textSize="8dp"/>
+
+        <SeekBar
+            android:id="@+id/sbStereo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:max="200"
+            android:maxHeight="4dp"
+            android:maxWidth="4dp"
+            android:progress="100"
+            android:progressDrawable="@drawable/drw_progress_empty"
+            android:thumb="@drawable/draw_slider"
+            />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="4dp"
+            android:text="R"
+            android:textSize="8dp"/>
+
+        <ToggleButton
+            android:id="@+id/btnSndPan"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="32dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="2dp"
+            android:background="@drawable/drw_mod_button_normal"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="MOD"
+            android:textOff="MOD"
+            android:textOn="MOD"
+            android:textSize="6dp"/>
+    </views.Custom.LinearLayoutTouched>
+
+    <views.Custom.LinearLayoutTouched
+        android:id="@+id/loPitch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/loBaseControl"
+        android:layout_alignTop="@+id/loTransport"
+        android:layout_toLeftOf="@+id/loPan"
+        android:layout_toRightOf="@+id/gridViewEdit"
+        android:layout_toStartOf="@+id/loPan"
+        android:background="@drawable/drw_border"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPitchDown"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:text="&lt;"
+            android:textSize="10dp"/>
+
+        <TextView
+            android:id="@+id/tvPitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="New Text"/>
+
+        <Button
+            android:id="@+id/btnPitchUp"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:text=">"
+            android:textSize="10dp"/>
+
+        <ToggleButton
+            android:id="@+id/btnSendPitch"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="32dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="2dp"
+            android:background="@drawable/drw_mod_button_normal"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="MOD"
+            android:textOff="MOD"
+            android:textOn="MOD"
+            android:textSize="6dp"/>
+    </views.Custom.LinearLayoutTouched>
+
+    <LinearLayout
+        android:id="@+id/loWaveForm"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/loTransport"
+        android:layout_toLeftOf="@+id/loFilterValue"
+        android:layout_toRightOf="@+id/gridViewEdit"
+        android:layout_toStartOf="@+id/loFilterValue"
+        android:background="#000"
+        android:orientation="horizontal">
+
+        <views.Custom.WaveFormRTView
+            android:id="@+id/vWaveForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/loPianoRoll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+        android:visibility="gone"
+
+        >
+
+        <views.Custom.PianoRollControlerView
+            android:id="@+id/vPianoControler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_alignParentTop="true"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

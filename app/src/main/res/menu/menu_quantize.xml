@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/one"
+        android:title="8/1"/>
+
+    <item
+        android:id="@+id/two"
+        android:title="4/1"/>
+
+    <item
+        android:id="@+id/three"
+        android:title="2/1"/>
+    <item
+        android:id="@+id/four"
+        android:title="1/1"/>
+    <item
+        android:id="@+id/five"
+        android:title="1/2"/>
+    <item
+        android:id="@+id/six"
+        android:title="1/4"/>
+    <item
+        android:id="@+id/seven"
+        android:title="1/8"/>
+    <item
+        android:id="@+id/hight"
+        android:title="1/16"/>
+</menu>

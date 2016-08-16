@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DrumMap</string>
+    <string name="shift_left">&lt;&lt;</string>
+    <string name="shift_right">&gt;&gt;</string>
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="72dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:background="@drawable/drw_border">
+
+
+        <Button
+            android:id="@+id/btnPlayPiano"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:text="Play"
+            android:textSize="7dp"/>
+
+        <Button
+            android:id="@+id/btnPausePiano"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="4dp"
+            android:text="Pause"
+            android:textSize="7dp"/>
+
+        <ToggleButton
+            android:id="@+id/btnRecPiano"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+
+            android:text="Rec"
+            android:textSize="7dp"/>
+
+        <TextView
+            android:id="@+id/etBpm"
+            android:layout_width="56dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/drw_bpm_bg"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="phone"
+            android:text="140"
+            android:textSize="24dp"/>
+
+        <TextView
+            android:id="@+id/tvBmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/etBpm"
+            android:layout_toRightOf="@+id/etBpm"
+            android:text="BPM"
+            android:textSize="8dp"/>
+
+        <TextView
+            android:id="@+id/tvPosition"
+            android:layout_width="88dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="false"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_toLeftOf="@+id/btnGlobalRec"
+            android:layout_toStartOf="@+id/btnGlobalRec"
+            android:background="@drawable/drw_bpm_bg"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="phone"
+            android:text="00:00.000"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/etBeatDuration"
+
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/drw_bpm_bg"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="phone"
+            android:text="64"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+
+            android:text="Beats"
+            android:textSize="8dp"/>
+
+        <View
+            android:id="@+id/vDrag"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/ic_drag"
+            android:rotation="45"/>
+    </LinearLayout>
+</RelativeLayout>

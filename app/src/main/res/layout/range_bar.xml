@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="32dp"
+              android:background="@color/colorBg"
+              android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView android:gravity="center"
+            android:id="@+id/tvleft"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="4dp"
+            android:text="00:00.000"
+            android:textColor="#fff"
+            android:textSize="8dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerInParent="true"
+            android:background="#333"></View>
+
+        <View
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/drw_bg_progressbar"></View>
+
+        <View
+            android:id="@+id/cursor"
+            android:layout_width="16dp"
+            android:layout_height="24dp" android:layout_marginLeft="100dp"
+            android:background="@drawable/ic_cursor"></View>
+
+        <View
+            android:id="@+id/progress1"
+            android:layout_width="24dp"
+            android:layout_height="32dp"
+            android:background="@drawable/draw_slider"></View>
+
+        <View
+            android:id="@+id/progress2"
+            android:layout_width="24dp"
+            android:layout_height="32dp"
+            android:background="@drawable/draw_slider"></View>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView android:gravity="center"
+            android:id="@+id/tvRight"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="4dp"
+            android:text="00:00.000"
+            android:textColor="#fff"
+            android:textIsSelectable="false"
+            android:textSize="8dp"/>
+    </RelativeLayout>
+</LinearLayout>

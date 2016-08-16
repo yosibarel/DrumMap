@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="0.0"
+        android:textSize="8dp"/>
+
+    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+
+        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+            android:id="@+id/sbValue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:max="100"
+            android:maxHeight="4dp"
+            android:maxWidth="4dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/draw_progress"
+            android:thumb="@drawable/draw_slider"
+            app:seekBarRotation="CW270"
+            />
+
+    </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+    <ToggleButton
+        android:id="@+id/btnEnable"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginTop="-5dp"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text=""
+        android:textOff=""
+        android:textOn=""/>
+
+    <FrameLayout
+        android:id="@+id/vEnableSeq"
+        android:layout_width="match_parent"
+        android:layout_height="32dp">
+
+        <View
+            android:id="@+id/vIndexPlaying"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/drw_seq_pattern_not_playing"/>
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/drw_border"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnMidiCut"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="cut"
+        android:textColor="#fff"
+        android:textSize="8dp"/>
+
+    <Button
+        android:id="@+id/btnMidiCopy"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="cpy"
+        android:textColor="#fff"
+        android:textSize="8dp"/>
+
+    <Button
+        android:id="@+id/btnMidiDelete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="dlt"
+        android:textColor="#fff"
+        android:textSize="8dp"/>
+
+    <Button
+        android:id="@+id/btnMidiShiftRight"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="@string/shift_right"
+        android:textColor="#fff"
+        android:textSize="8dp"/>
+
+    <Button
+        android:id="@+id/btnMidiShiftLeft"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="@string/shift_left"
+        android:textColor="#fff"
+        android:textSize="8dp"/>
+    <Button
+        android:id="@+id/btnMidiSelect"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="Slct"
+        android:textColor="#fff"
+        android:textSize="8dp"/>
+
+
+</LinearLayout>

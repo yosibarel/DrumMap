@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/colorBg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/drw_border">
+
+            <RadioGroup
+                android:id="@+id/rgState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbDrag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Drag"
+                    android:textSize="8dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbDraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Draw"
+                    android:textSize="8dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Play"
+                    android:textSize="8dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbLoop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loop"
+                    android:textSize="8dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select"
+                    android:textSize="8dp"/>
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right">
+
+                <Button
+                    android:id="@+id/btnClosePiano"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="16dp"
+                    android:text="C"
+                    android:textSize="10dp"
+                    android:visibility="visible"/>
+
+                <CheckBox
+                    android:id="@+id/cbFollow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:text="flw"
+                    android:textSize="8dp"/>
+
+                <CheckBox
+                    android:id="@+id/cbTransport"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="16dp"
+                    android:text="Transport"
+                    android:textSize="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <views.Custom.RangeBarVertical
+                android:id="@+id/rbVertical"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"></views.Custom.RangeBarVertical>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/drw_bg_wavw_form">
+
+                <views.Custom.PianoRollView
+                    android:id="@+id/pianoRollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <View
+                    android:id="@+id/vCursorPosition"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#35f">
+
+                </View>
+            </FrameLayout>
+        </LinearLayout>
+
+        <views.Custom.RangeBar
+            android:id="@+id/rbPrecent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/vTransport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom">
+
+        <include layout="@layout/view_transport"></include>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/vMidiOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="56dp">
+
+
+        <include layout="@layout/layout_option_selected_midi"></include>
+    </FrameLayout>
+</FrameLayout>

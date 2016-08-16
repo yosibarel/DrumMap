@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yossibarel.drummap.DrumMapActivity">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#111">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="48dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnFileOption"
+                    android:layout_width="40dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+
+                    android:text="File"
+                    android:textSize="8dp"/>
+
+
+                <CheckBox
+                    android:id="@+id/cbSensor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_marginRight="8dp"
+                    android:text="Snsr ctrl"
+                    android:textSize="8dp"/>
+
+                <CheckBox
+                    android:id="@+id/cbQuantize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+
+                    android:text="Q"
+                    android:textSize="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvQuantize"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:text="1/1"
+                    android:textSize="12dp"/>
+                <CheckBox
+                    android:id="@+id/cbTransport"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="16dp"
+                    android:text="Transport"
+                    android:textSize="8dp"/>
+                <Button
+                    android:id="@+id/btnMainGrid"
+                    android:layout_width="40dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:text="Grid"
+                    android:textSize="6dp"
+                    />
+
+                <Button
+                    android:id="@+id/btnMixer"
+                    android:layout_width="40dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:text="Mxr"
+                    android:textSize="6dp"/>
+                <Button
+                    android:id="@+id/btnFx"
+                    android:layout_width="40dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:text="Fx"
+                    android:textSize="6dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:id="@+id/lChannel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="4"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lChannel2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="4"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lChannel3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="4"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lChannel4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="4"></LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llControlXYContainer"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+
+        android:orientation="vertical"
+        android:translationX="160dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#222">
+
+            <Button
+                android:id="@+id/btnControlXY"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:text="ctrl"
+                android:textSize="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Control XY"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llControlXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="#111"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <views.Custom.ViewControlXY
+                android:id="@+id/vControlXY1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="#023"/>
+
+            <views.Custom.ViewControlXY
+                android:id="@+id/vControlXY2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="#023"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llControlScretchContainer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+
+        android:orientation="vertical"
+        android:translationX="-200dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#222"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Scretch"/>
+
+            <Button
+                android:id="@+id/btnControlScretch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:text="srch"
+                android:textSize="6dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llControlScretch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:alpha="0"
+
+            android:background="#222"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1">
+
+                <GridView
+                    android:id="@+id/gwScrachEnable"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:horizontalSpacing="0dp"
+                    android:numColumns="8"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="0dp"></GridView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="240dp"
+                android:layout_height="200dp"
+                android:orientation="horizontal">
+
+                <views.Custom.CircleLayout
+                    android:id="@+id/vScretch"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/ic_disk">
+
+                    <include layout="@layout/menu_items"/>
+                </views.Custom.CircleLayout>
+
+                <views.Custom.ViewPitchBand
+                    android:id="@+id/vPitch"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"></views.Custom.ViewPitchBand>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/vTransport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" android:layout_alignParentBottom="true">
+
+        <include layout="@layout/view_transport"></include>
+    </FrameLayout>
+</RelativeLayout>

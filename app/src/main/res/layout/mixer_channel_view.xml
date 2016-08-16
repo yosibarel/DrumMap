@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="112dp"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/loVolume"
+        android:layout_width="68dp"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/loFilterType"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/drw_border"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/tvVol"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="0.0"
+            android:textSize="8dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:background="#000">
+
+                <views.Custom.ViewMeter
+                    android:id="@+id/vmLeft"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbVol"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/draw_progress"
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"
+                    />
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+            <LinearLayout
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:background="#000">
+
+                <views.Custom.ViewMeter
+                    android:id="@+id/vmRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFxParamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="4dp"
+
+            android:text="Vol"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="8dp"/>
+
+        <LinearLayout
+            android:id="@+id/loPan"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+
+            android:background="@drawable/drw_border"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="4dp"
+
+                android:text="L"
+                android:textSize="8dp"/>
+
+            <SeekBar
+                android:id="@+id/sbStereo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:max="200"
+                android:maxHeight="4dp"
+                android:maxWidth="4dp"
+                android:progress="100"
+                android:progressDrawable="@drawable/drw_progress_empty"
+                android:thumb="@drawable/draw_slider"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="4dp"
+                android:text="R"
+                android:textSize="8dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ToggleButton
+                android:id="@+id/btnMute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textOff="m"
+                android:textOn="m"
+                android:textSize="8dp"/>
+
+
+            <ToggleButton
+                android:id="@+id/btnSolo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textOff="s"
+                android:textOn="s"
+                android:textSize="8dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnChannel"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:padding="0dp"
+            android:text="ch1"
+            android:textSize="6dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:background="@drawable/drw_border">
+
+        <LinearLayout android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSend1"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="0.0"
+                android:textSize="8dp"
+                />
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbSend1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/draw_progress"
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"
+                    />
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+            <ToggleButton
+                android:id="@+id/btnSend1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:text=""
+                android:textOff=""
+                android:textOn=""/>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="4dp"
+
+                android:text="Snd1"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

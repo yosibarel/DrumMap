@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnOpenFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open"
+            android:textSize="10dp"/>
+
+        <Button
+            android:id="@id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="56dp"
+            android:text="Play"
+            android:textSize="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgState"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbMove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:checked="true"
+                android:text="Drag"
+                android:textSize="10dp"/>
+
+            <RadioButton
+                android:id="@+id/rbEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text="Edit"
+                android:textSize="10dp"/>
+
+            <RadioButton
+                android:id="@+id/rbPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text="Play"
+                android:textSize="10dp"/>
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/cbLoop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="Loop"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp">
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbZoomY"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="1000"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/draw_progress"
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"
+                    />
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/loEditWave"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:background="@drawable/drw_bg_wavw_form">
+
+
+            <views.Custom.WaveFormEditView
+                android:id="@+id/vWaveForm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <View
+                android:id="@+id/vCursorPosition"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#35f">
+
+            </View>
+
+            <TextView
+                android:id="@+id/tvProcessMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Processing..."
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <views.Custom.RangeBar
+        android:id="@+id/rbPrecent"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="4dp"/>
+</LinearLayout>

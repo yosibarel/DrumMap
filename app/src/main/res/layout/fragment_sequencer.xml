@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="2">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <ToggleButton
+            android:id="@+id/btnEnableSeq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="New ToggleButton"/>
+
+        <Button
+            android:id="@+id/btnResetSeq"
+            android:layout_width="42dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="Reset"
+            android:textSize="6dp"
+            />
+
+        <Button
+            android:id="@+id/btnRandSeq"
+            android:layout_width="42dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="44dp"
+            android:text="Rand"
+            android:textSize="6dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rgSeqState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/gbValueType"
+                android:layout_toEndOf="@+id/gbValueType"
+                android:layout_toRightOf="@+id/gbValueType">
+
+                <RadioButton
+                    android:id="@+id/rbStat1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:checked="true"
+                    android:paddingLeft="4dp"
+                    android:text="Off"
+                    android:textSize="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbStat2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="On"
+                    android:textSize="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbStat3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="Retriger"
+                    android:textSize="10dp"/>
+
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                    android:id="@+id/view3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+
+                    android:layout_weight="1">
+
+                    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                        android:id="@+id/sbRate"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:max="5"
+                        android:maxHeight="4dp"
+                        android:maxWidth="4dp"
+                        android:progress="5"
+                        android:progressDrawable="@drawable/draw_progress"
+                        android:thumb="@drawable/draw_slider"
+                        app:seekBarRotation="CW270"
+                        />
+
+                </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+                <TextView
+                    android:id="@+id/tvRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="1/1"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="10dp"/>
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rgSteps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/gbValueType"
+                android:layout_marginLeft="16dp"
+                android:layout_toEndOf="@+id/gbValueType"
+                android:layout_toRightOf="@+id/gbValueType">
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:checked="true"
+                    android:paddingLeft="4dp"
+                    android:text="Forward"
+                    android:textSize="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="Reverse"
+                    android:textSize="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="Repeat"
+                    android:textSize="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="Random"
+                    android:textSize="10dp"/>
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/gbValueType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="16dp"
+                android:layout_toEndOf="@+id/view3"
+                android:layout_toRightOf="@+id/view3">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:checked="true"
+                    android:paddingLeft="4dp"
+                    android:text="Velocity"
+                    android:textSize="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="Note"
+                    android:textSize="10dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="Gate Len."
+                    android:textSize="10dp"
+                    />
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="Step Dur."
+                    android:textSize="10dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:paddingLeft="4dp"
+                    android:text="Curve 1"
+                    android:textSize="10dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:button="@drawable/drw_check_box"
+                    android:checked="false"
+                    android:paddingLeft="4dp"
+                    android:text="Curve 2"
+                    android:textSize="10dp"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/contentPatterns"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="16">
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+        <views.Custom.VIewSeqPattern
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></views.Custom.VIewSeqPattern>
+
+
+    </LinearLayout>
+</LinearLayout>

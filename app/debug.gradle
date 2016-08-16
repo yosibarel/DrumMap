@@ -1,0 +1,102 @@
+apply plugin: "com.android.model.application"
+
+model {
+    android {
+
+        defaultPublishConfig "x86Debug"
+        compileSdkVersion 23
+        buildToolsVersion "23.0.2"
+
+        defaultConfig {
+            applicationId = "com.yossibarel.drummap"
+            minSdkVersion.apiLevel 16
+            targetSdkVersion.apiLevel 23
+            versionCode = 1
+            versionName = "1.0"
+        }
+    }
+
+    android.ndk {
+        // All configurations that can be changed in android.ndk.
+        platformVersion = 19
+        moduleName = "drummapjni"
+        ldLibs.add("log")
+        ldLibs.add("OpenSLES")
+        ldLibs.add("android")
+
+        stl = "stlport_static"
+    }
+    android.buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles.add(file("proguard-rules.pro"))
+        }
+    }
+    android.productFlavors {
+        create("arm64") {
+            ndk.with {
+                abiFilters.add("arm64-v8a")
+
+                File curDir = file('./')
+                curDir = file(curDir.absolutePath)
+                String libsDir = curDir.absolutePath + "/src/main/libs/arm64-v8a/"
+                ldLibs.add(libsDir + "libSuperpoweredAndroidARM64.a")
+            }
+        }
+
+        create("armeabi-v7a") {
+            ndk.with {
+                abiFilters.add("armeabi-v7a")
+
+                File curDir = file('./')
+                curDir = file(curDir.absolutePath)
+                String libsDir = curDir.absolutePath + "/src/main/libs/armeabi-v7a/"
+                ldLibs.add(libsDir + "libSuperpoweredAndroidARM.a")
+            }
+        }
+
+        create("x86") {
+            ndk.with {
+                abiFilters.add("x86")
+
+                File curDir = file('./')
+                curDir = file(curDir.absolutePath)
+                String libsDir = curDir.absolutePath + "/src/main/libs/x86/"
+                ldLibs.add(libsDir + "libSuperpoweredAndroidX86.a")
+            }
+        }
+
+        create("x86_64") {
+            ndk.with {
+                abiFilters.add("x86_64")
+
+                File curDir = file('./')
+                curDir = file(curDir.absolutePath)
+                String libsDir = curDir.absolutePath + "/src/main/libs/x86_64/"
+                ldLibs.add(libsDir + "libSuperpoweredAndroidX86_64.a")
+            }
+        }
+    }
+
+    android.sources {
+        main {
+            jni {
+                source {
+                    srcDirs += ['src/main/jni']
+                }
+            }
+        }
+    }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:0.6.0'
+    compile 'com.appyvet:materialrangebar:1.3'
+    compile 'com.android.support:recyclerview-v7:23.2.1'
+
+    compile 'com.rarepebble:colorpicker:1.7.0'
+    compile 'com.github.yukuku:ambilwarna:2.0.1'
+}

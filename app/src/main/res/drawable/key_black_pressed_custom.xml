@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/ic_key_black">
+
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#7000"></solid>
+        </shape>
+    </item>
+
+
+</layer-list>

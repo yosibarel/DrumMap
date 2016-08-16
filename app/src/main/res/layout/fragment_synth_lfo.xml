@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    tools:context="com.yossibarel.drummap.EditChannelActivity">
+
+    <views.Custom.RelativeLayoutTouced
+        android:id="@+id/loLfo1"
+        android:layout_width="212dp"
+        android:layout_height="142dp"
+        android:background="@drawable/drw_border"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="32dp"
+            android:layout_height="100dp"
+            android:layout_alignTop="@+id/waveView1"
+            android:layout_toEndOf="@+id/waveView1"
+            android:layout_toRightOf="@+id/waveView1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnSinus1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnSaw1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnRect1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnTriangle1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <views.Custom.WaveFormView
+            android:id="@+id/waveView1"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="48dp"
+
+            android:background="#000"/>
+
+        <SeekBar
+            android:id="@+id/sbRateWave1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/waveView1"
+            android:layout_alignStart="@+id/waveView1"
+            android:layout_below="@+id/waveView1"
+            android:layout_toLeftOf="@+id/linearLayout4"
+            android:layout_toStartOf="@+id/linearLayout4"
+            android:max="100"
+            android:maxHeight="4dp"
+            android:maxWidth="4dp"
+            android:progress="50"
+
+            android:progressDrawable="@drawable/draw_progress"
+            android:thumb="@drawable/draw_slider"/>
+
+        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/waveView1"
+            android:layout_marginLeft="16dp">
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                android:id="@+id/sbAmplitude1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:max="200"
+                android:maxHeight="4dp"
+                android:maxWidth="4dp"
+                android:progress="200"
+                android:progressDrawable="@drawable/draw_progress"
+
+                android:thumb="@drawable/draw_slider"
+                app:seekBarRotation="CW270"/>
+
+        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginLeft="-14dp"
+            android:layout_marginTop="24dp"
+            android:gravity="right"
+            android:rotation="270"
+            android:text="LFO 1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+
+            />
+
+        <TextView
+            android:id="@+id/tvRate1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginRight="6dp"
+            android:text="1.0Hz"
+            android:textSize="10dp"/>
+    </views.Custom.RelativeLayoutTouced>
+
+    <views.Custom.RelativeLayoutTouced
+        android:id="@+id/loLfo2"
+        android:layout_width="212dp"
+        android:layout_height="142dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/drw_border"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="32dp"
+            android:layout_height="100dp"
+            android:layout_alignTop="@+id/waveView2"
+            android:layout_toEndOf="@+id/waveView2"
+            android:layout_toRightOf="@+id/waveView2"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnSinus2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnSaw2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnRect2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnTriangle2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <views.Custom.WaveFormView
+            android:id="@+id/waveView2"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="48dp"
+
+            android:background="#000"/>
+
+        <SeekBar
+            android:id="@+id/sbRateWave2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/waveView2"
+            android:layout_alignStart="@+id/waveView2"
+            android:layout_below="@+id/waveView2"
+            android:layout_toLeftOf="@+id/linearLayout"
+            android:layout_toStartOf="@+id/linearLayout"
+            android:max="100"
+            android:maxHeight="4dp"
+            android:maxWidth="4dp"
+            android:progress="50"
+
+            android:progressDrawable="@drawable/draw_progress"
+            android:thumb="@drawable/draw_slider"/>
+
+        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+            android:id="@+id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/waveView2"
+            android:layout_marginLeft="16dp">
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                android:id="@+id/sbAmplitude2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:max="200"
+                android:maxHeight="4dp"
+                android:maxWidth="4dp"
+                android:progress="200"
+                android:progressDrawable="@drawable/draw_progress"
+
+                android:thumb="@drawable/draw_slider"
+                app:seekBarRotation="CW270"/>
+
+        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginLeft="-14dp"
+            android:layout_marginTop="24dp"
+            android:gravity="right"
+            android:rotation="270"
+            android:text="LFO 2"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+
+
+            />
+
+        <TextView
+            android:id="@+id/tvRate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginRight="6dp"
+            android:text="1.0Hz"
+            android:textSize="10dp"/>
+    </views.Custom.RelativeLayoutTouced>
+
+    <views.Custom.RelativeLayoutTouced
+        android:layout_width="200dp"
+        android:layout_height="142dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/drw_border"
+        android:paddingBottom="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="8dp"
+        android:id="@+id/loLfo12">
+
+        <views.Custom.WaveFormView
+            android:id="@+id/waveViewMain"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="36dp"
+
+
+            android:background="#000"/>
+
+        <SeekBar
+            android:id="@+id/sbPresent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/waveViewMain"
+            android:layout_alignLeft="@+id/waveViewMain"
+            android:layout_alignRight="@+id/waveViewMain"
+            android:layout_alignStart="@+id/waveViewMain"
+            android:layout_below="@+id/waveViewMain"
+            android:max="100"
+            android:maxHeight="4dp"
+
+            android:maxWidth="4dp"
+            android:progress="100"
+            android:progressDrawable="@drawable/draw_progress"
+            android:thumb="@drawable/draw_slider"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginTop="24dp"
+            android:gravity="right"
+            android:rotation="270"
+            android:text="LFO 1+2"
+            android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
+
+    </views.Custom.RelativeLayoutTouced>
+
+    <views.Custom.LinearLayoutTouched
+        android:layout_width="142dp"
+        android:layout_height="142dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/drw_border"
+        android:orientation="vertical"
+
+        android:padding="4dp"
+        android:id="@+id/loADSR">
+
+        <LinearLayout android:layout_weight="1"
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="horizontal"
+            >
+
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbEnvA"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/draw_progress"
+
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"/>
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="2dp">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbEnvD"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/draw_progress"
+
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"/>
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="2dp"
+                >
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbEnvS"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="50"
+                    android:progressDrawable="@drawable/draw_progress"
+
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"/>
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                    android:id="@+id/sbEnvR"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:max="100"
+                    android:maxHeight="4dp"
+                    android:maxWidth="4dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/draw_progress"
+
+                    android:thumb="@drawable/draw_slider"
+                    app:seekBarRotation="CW270"/>
+
+            </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_alignBottom="@+id/loADSR"
+            android:layout_alignLeft="@+id/loADSR"
+            android:layout_alignStart="@+id/loADSR">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="A"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="D"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="S"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="R"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="8dp"/>
+        </LinearLayout>
+    </views.Custom.LinearLayoutTouched>
+
+
+
+
+</RelativeLayout>

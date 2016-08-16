@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:background="@drawable/drw_border"
+              android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/vSelected"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="4dp"
+
+        android:button="@drawable/drw_check_box"/>
+
+    <TextView android:textSize="8dp"
+        android:id="@+id/tvModName"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+
+        android:text="tvModeName"/>
+
+    <views.Custom.RangeBarPrecent
+        android:id="@+id/rbOffset"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginRight="8dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"></views.Custom.RangeBarPrecent>
+
+
+</LinearLayout>
